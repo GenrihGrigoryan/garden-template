@@ -3,8 +3,7 @@ const currentTheme = localStorage.getItem('theme');
 const currentFont = localStorage.getItem('f-family');
 const booktheme = localStorage.getItem('book');
 
-var element = document.body;
-element.classList.toggle(currentFont);
+document.addEventListener('DOMContentLoaded', () => document.body.classList.toggle(currentFont));
 
 if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
