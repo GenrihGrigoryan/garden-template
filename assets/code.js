@@ -3,7 +3,7 @@ const currentTheme = localStorage.getItem('theme');
 const currentFont = localStorage.getItem('f-family');
 const booktheme = localStorage.getItem('book');
 
-
+element.classList.toggle(currentFont);
 if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
 
@@ -14,7 +14,7 @@ if (currentTheme) {
 
 window.onload = function() {
     var element = document.body;
-    element.classList.toggle(currentFont);
+
 
     if(booktheme == 'true'){
         var body = document.getElementById("mybody"); //.body
