@@ -3,14 +3,8 @@ const currentTheme = localStorage.getItem('theme');
 const currentFont = localStorage.getItem('f-family');
 const booktheme = localStorage.getItem('book');
 
-document.addEventListener('DOMContentLoaded', () => document.body.classList.toggle(currentFont));
-
 if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
-
-    if (currentTheme === 'dark') {
-        //toggleSwitch.checked = true;
-    }
 }
 
 window.onload = function() {
@@ -42,7 +36,6 @@ window.onload = function() {
     }
 }
 
-
 function fadeInPage() {
     if (!window.AnimationEvent) { return; }
     var fader = document.getElementById('fader');
@@ -50,6 +43,8 @@ function fadeInPage() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    document.body.classList.toggle(currentFont)
+
     if (!window.AnimationEvent) { return; }
 
     var anchors = document.getElementsByTagName('a');
@@ -147,34 +142,6 @@ function switchFont(){
 
     setFont(newfont)
 
-    /*
-    switch(font){
-        case 'serif':
-            newfont = 'sans';
-            if(element.classList.contains('serif')){
-                element.classList.toggle('serif')
-            }
-        break;
-        case 'sans':
-            newfont = 'mono';
-            if(element.classList.contains('sans')){
-                element.classList.toggle('sans')
-            }
-        break;
-        case 'mono':
-            newfont = 'serif';
-            if(element.classList.contains('mono')){
-                element.classList.toggle('mono')
-            }
-        break;
-        default:
-            newfont = 'serif';
-        break;
-    }
-    element.classList.toggle(newfont)
-    */
-    //localStorage.setItem('f-family', newfont);
-
 }
 
 function setFont(fontname){
@@ -198,13 +165,9 @@ function setFont(fontname){
     localStorage.setItem('f-family', fontname);
 }
 
-//toggleSwitch.addEventListener('change', switchTheme, false);
-
-
 function toggleBook(){
     var theme = localStorage.getItem('book');
     var body = document.getElementById("mybody"); //document.body;
-    /*var content = document.getElementById("bookcontent");*/
     var htmlcolor = document.body;
     var nav = document.querySelector("nav");
 
